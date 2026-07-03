@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Peer-Tutoring Matcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Campus Study Group & Tutor Platform</h1>
+        <p>Laguna Seca University</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Register as a Tutor / Group</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name / Group Lead</label>
+                    <input type="text" id="fullName" required placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Student Email</label>
+                    <input type="email" id="studentEmail" required placeholder="j.doe@seneca.edu">
+                    <small id="emailError" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select a Department...</option>
+                        <option value="IT">IT</option>
+                        <option value="Language">Language</option>
+                        <option value="Business">Business & Economics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Specific Subject/Course Code</label>
+                    <input type="text" id="subject" required placeholder="e.g., ITPE003LA, ITPE003LEC">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Registration Type</label>
+                    <select id="role" required>
+                        <option value="Tutor">Individual Peer Tutor</option>
+                        <option value="Study Group">Study Group looking for members</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn">Submit Registration</button>
+            </form>
+            <div id="formStatus" class="status-message"></div>
+        </section>
+
+        <section class="directory-section">
+            <h2>Active Study Directory</h2>
+            
+            <div class="filter-controls">
+                <input type="text" id="searchBar" placeholder="Search by subject (e.g., ENG001)...">
+                <button id="clearFiltersBtn">Reset Filters</button>
+            </div>
+
+            <div id="directoryGrid" class="directory-grid">
+                <div class="card IT" data-subject="CS101" data-dept="IT">
+                    <h3>IT Professional Elective (ITPE003)</h3>
+                    <p><strong>Type:</strong> Study Group</p>
+                    <p><strong>Contact:</strong> group.cs@seneca.edu.ph</p>
+                    <span class="badge IT-badge">IT</span>
+                </div>
+                <div class="card IT" data-subject="ECON102" data-dept="Business">
+                    <h3>Integrative Programming (INTP001)</h3>
+                    <p><strong>Type:</strong> Peer Tutor</p>
+                    <p><strong>Contact:</strong> davide.valsecchi@seneca.edu.ph</p>
+                    <span class="badge IT-badge">IT</span>
+                </div>
+                <div class="card language" data-subject="ENG001" data-dept="Language">
+                    <h3>English in the Workplace (ENG001)</h3>
+                    <p><strong>Type:</strong> Study Group</p>
+                    <p><strong>Contact:</strong> marwan.bwyn@seneca.edu.ph</p>
+                    <span class="badge language-badge">Language</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
